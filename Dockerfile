@@ -1,9 +1,6 @@
-FROM gliderlabs/alpine:3.1
+FROM leanlabs/base-builder:latest
 
-RUN apk-install git
+RUN apk --update add git && \
+    rm -rf /var/cache/apk/*
 
-ENTRYPOINT ["/bin/sh", "-c"]
-
-ADD ./build.sh /build.sh
-
-CMD ["/build.sh"]
+ENTRYPOINT ["git"]
