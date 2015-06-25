@@ -1,6 +1,7 @@
 FROM leanlabs/base-builder:latest
 
 RUN apk --update add git \
+        perl \
         openssh && \
     mkdir -p /root/.ssh && \
     chmod 700 /root/.ssh && \
